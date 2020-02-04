@@ -29,7 +29,33 @@
     </ul>
   </div>
 </nav>
-    <h1>회원가입 완료</h1>
+
+
+<div class = "container">
+	<caption>회원목록</caption>
+    <table class="table">
+  <thead>
+  
+    <tr>
+<!--       <th scope="col">#</th> -->
+      <th scope="col">UserName</th>
+      <th scope="col">UserID</th>
+
+    </tr>
+  
+  </thead>
+  <tbody>
+  	{{#users}}
+    <tr>
+<!--       <th scope="row"></th> -->
+      <td>{{UserName}}</td>
+      <td>{{UserID}}</td>
+    </tr>
+      {{/users}}
+
+  </tbody>
+</table>
+<div/>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
