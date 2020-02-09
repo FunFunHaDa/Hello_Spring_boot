@@ -1,9 +1,22 @@
-package com.hello.web;
+package com.hello.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class User {
-	private String UserName;
+	@Id
+	@GeneratedValue
+	private Long id;
+	
+	@Column(nullable = false, length = 20)
 	private String UserID;
+	
+	private String UserName;
 	private String Password;
+	
 	
 	public String getUserName() {
 		return UserName;
