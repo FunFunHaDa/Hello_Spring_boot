@@ -21,7 +21,7 @@ public class UserController {
 	
 	@GetMapping("/form")
 	public String form() {
-		return "/user/form";
+		return "user/form";
 	}
 	
 	@PostMapping("")
@@ -29,7 +29,7 @@ public class UserController {
 	{
 		System.out.println("postmapping  "+user);
 		userReposity.save(user);
-		return "redirect:/users";
+		return "redirect:users";
 	}
 	
 	@GetMapping("")
@@ -37,14 +37,14 @@ public class UserController {
 	{
 		System.out.println("model: "+ model);
 		model.addAttribute("users", userReposity.findAll());
-		return "/user/list";
+		return "user/list";
 	}
 	
 	@GetMapping("/{id}/form")
 	public String updateForm(@PathVariable Long id, Model model) {
 		User user = userReposity.findById(id).get();
 		model.addAttribute("user", user);
-		return "/user/updateForm";
+		return "user/updateForm";
 	}
 	
 
