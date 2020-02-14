@@ -15,6 +15,18 @@ public class User {
 	private String UserID;
 	
 	private String UserName;
+	private String UserEmail;
+	
+	
+	public String getUserEmail() {
+		return UserEmail;
+	}
+
+
+	public void setUserEmail(String userEmail) {
+		UserEmail = userEmail;
+	}
+
 	private String Password;
 	
 	
@@ -59,6 +71,6 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "User [UserName=" + UserName + ", UserID=" + UserID + ", Password=" + Password + "]";
+		return "User [UserName=" + UserName + ", UserID=" + UserID+", UserEmail=" + UserEmail + ", Password=" + Password + "]";
 	}
 }
