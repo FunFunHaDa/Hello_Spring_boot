@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -40,7 +41,7 @@ public class UserController {
 		model.addAttribute("users", userReposity.findAll());
 		return "user/list";
 	}
-	
+
 //	@GetMapping("/users")
 //	public String list2(Model model) {
 //		System.out.println("model: " + model);
@@ -56,8 +57,7 @@ public class UserController {
 		return "user/updateForm";
 	}
 
-	
-	@PostMapping("/{id}")
+	@PutMapping("/{id}")
 	public String update(@PathVariable Long id, User newUser) {
 		System.out.println("@PostMapping(\"/{id}\")");
 		User user = userReposity.findById(id).get();
