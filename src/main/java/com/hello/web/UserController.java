@@ -20,6 +20,11 @@ public class UserController {
 	@Autowired
 	private UserReposity userReposity;
 
+	@GetMapping("/loginForm")
+	public String loadingForm() {
+		return "/user/login";
+	}
+	
 	@GetMapping("/form")
 	public String form() {
 		System.out.println("@GetMapping(\"/form\")");
