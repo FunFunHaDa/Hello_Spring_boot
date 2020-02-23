@@ -3,16 +3,17 @@ package com.hello.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class User {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@Column(nullable = false, length = 20)
-	private String UserID;
+	private String userID;
 
 	private String UserName;
 	private String UserEmail;
@@ -22,7 +23,7 @@ public class User {
 	}
 
 	public void setUserEmail(String userEmail) {
-		UserEmail = userEmail;
+		this.UserEmail = userEmail;
 	}
 
 	private String Password;
@@ -32,15 +33,15 @@ public class User {
 	}
 
 	public void setUserName(String userName) {
-		UserName = userName;
+		this.UserName = userName;
 	}
 
 	public String getUserID() {
-		return UserID;
+		return userID;
 	}
 
-	public void setUserID(String userID) {
-		UserID = userID;
+	public void setUserID(String UserID) {
+		this.userID = UserID;
 	}
 
 	public String getPassword() {
@@ -48,7 +49,7 @@ public class User {
 	}
 
 	public void setPassword(String password) {
-		Password = password;
+		this.Password = password;
 	}
 
 	public void update(User newUser) {
@@ -57,13 +58,13 @@ public class User {
 		this.Password = newUser.Password;
 		this.UserEmail = newUser.UserEmail;
 		this.UserName = newUser.UserName;
-		this.UserID = newUser.UserID;
+		this.userID = newUser.userID;
 		System.out.println("update" +newUser);
 	}
 
 	@Override
 	public String toString() {
-		return "User [UserName=" + UserName + ", UserID=" + UserID + ", UserEmail=" + UserEmail + ", Password="
+		return "User [UserName=" + UserName + ", UserID=" + userID + ", UserEmail=" + UserEmail + ", Password="
 				+ Password + "]";
 	}
 }
